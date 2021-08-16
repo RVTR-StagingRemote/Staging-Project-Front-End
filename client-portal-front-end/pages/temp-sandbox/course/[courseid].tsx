@@ -11,11 +11,14 @@ import { GetCourse } from "../../../utils/services/course-service";
 const CourseInfoPage: NextPage = () => {
   const router = useRouter();
   const { courseid } = router.query;
-  const [course, setcourse] = useState<ICourse | null>(null);
+
+  const [course, setCourse] = useState<ICourse | null>(null);
 
   useEffect(() => {
-    GetCourse(courseid as string).then((data) => setcourse(data));
-  }, []);
+    if (courseid !== undefined)
+      GetCourse(courseid as string).then((data) => setCourse(data));
+  }, [courseid]); // make a call when the router hook updates the courseid value,
+  // when the component initializes `courseid` will match the value in the route parameter
 
   return (
     <div className="container">

@@ -8,7 +8,7 @@ export function GetCourseList(): Promise<ICourse[]> {
 }
 
 export function GetCourse(id: string): Promise<ICourse> {
-  return fetch(`${baseCourseEndpointURL}/${id}`).then((resp) => resp.json());
+  return fetch(`${baseCourseEndpointURL}/FindCourseById/${id}`).then((resp) => resp.json());
 }
 
 export function CreateCourse(course: ICourse): Promise<any> {
