@@ -9,7 +9,7 @@ import { COURSE_ARR } from '../models/temp/sampleData' // temp for testing while
 const arr_list = COURSE_ARR.map(
   (a) => 
   <div>
-    <div>{a.id}. {a.name}</div>
+    <div>{a.id}. {a.courseName}</div>
     <div>{a.duration} weeks</div>
     <div>Instructor: {a.instructor}</div>
     <div>{a.description}</div>
