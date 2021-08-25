@@ -37,7 +37,7 @@ const OrderForm: FunctionComponent = () => {
   const onSubmit = (e: React.MouseEvent) => {
     // TODO: setup logic to validate and submit data for purchase
     alert(
-      `Course details: \nTech => ${formData.technology} \nInstructor => ${formData.instructor}`
+      `Course details: \nTech => ${formData.technology} \nInstructor => ${formData.instructor} \nAssociates => ${formData.associates}`
     );
   };
 
@@ -86,6 +86,8 @@ const OrderForm: FunctionComponent = () => {
                     className="form-text"
                     name="associates"
                     id="associates-textbox"
+                    value={formData.associates}
+                    onChange={handleChange}
                     />
                 </div>
               </form>
