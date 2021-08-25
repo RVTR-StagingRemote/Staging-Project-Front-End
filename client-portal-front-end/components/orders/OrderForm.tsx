@@ -90,6 +90,9 @@ const OrderForm: FunctionComponent = () => {
                     onChange={handleChange}
                     />
                 </div>
+                <div className="mb-3">
+                  <input type="button" value="Add to Team"/>
+                </div>
               </form>
             </div>
           </div>
