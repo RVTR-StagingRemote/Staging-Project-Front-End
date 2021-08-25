@@ -6,7 +6,8 @@ interface OrderFormData {
   instructor: string;
   associates: number;
 }
-
+interface TeamData extends OrderFormData {
+}
 /**
  * For now, this component will serve as the UI that a user will interact with to select a course and submit it for purchase on the order/course page.
  */
@@ -17,6 +18,10 @@ const OrderForm: FunctionComponent = () => {
     instructor: "",
     associates: 0,
   });
+  const [teamListData, setTeamListData] = useState<TeamData[]>(
+    []
+  );
+
 
   /**
    * This event is fired whenever a form field input value updates.  The formData state updates depending on which input field was changed.
@@ -42,9 +47,7 @@ const OrderForm: FunctionComponent = () => {
   };
 
   const addToTeam = (e: React.MouseEvent) => {
-    alert(
-      `Course details: \nTech => ${formData.technology} \nInstructor => ${formData.instructor} \nAssociates => ${formData.associates}`
-    )
+    setTeamListData([...teamListData, formData]);
   };
 
   return (
@@ -115,6 +118,7 @@ const OrderForm: FunctionComponent = () => {
             <div>
               <h4>Your Team</h4>
               <ul id="teamMembers">
+                {teamListData.map((listItem) => <li>Tech: {listItem.technology} Instructor:{listItem.instructor} No. Associates{listItem.associates}</li>)}
               </ul>
             </div>
             <div>
