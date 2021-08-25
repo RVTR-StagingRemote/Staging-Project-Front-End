@@ -9,7 +9,7 @@ const CheckoutPage: NextPage = () => {
   return (
     <div>
       <Elements stripe={promise}>
-        <CheckoutForm />
+        <CheckoutForm numCourses={3} />
       </Elements>
     </div>
   )
