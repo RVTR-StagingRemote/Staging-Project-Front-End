@@ -41,6 +41,12 @@ const OrderForm: FunctionComponent = () => {
     );
   };
 
+  const addToTeam = (e: React.MouseEvent) => {
+    alert(
+      `Course details: \nTech => ${formData.technology} \nInstructor => ${formData.instructor} \nAssociates => ${formData.associates}`
+    )
+  };
+
   return (
     <div className={`container ${styles.container}`}>
       <div className="row my-0 my-md-5">
@@ -90,6 +96,9 @@ const OrderForm: FunctionComponent = () => {
                     onChange={handleChange}
                     />
                 </div>
+                <div className="mb-3">
+                  <input type="button" value="Add to Team" onClick={addToTeam}/>
+                </div>
               </form>
             </div>
           </div>
@@ -105,10 +114,7 @@ const OrderForm: FunctionComponent = () => {
           <div className={styles["info-box"]}>
             <div>
               <h4>Your Team</h4>
-              <ul>
-                <li>Detail 1</li>
-                <li>Detail 2</li>
-                <li>Detail 3</li>
+              <ul id="teamMembers">
               </ul>
             </div>
             <div>
