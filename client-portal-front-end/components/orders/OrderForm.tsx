@@ -40,54 +40,76 @@ const OrderForm: FunctionComponent = () => {
   };
 
   return (
-    <div className={styles.container}>
-      <div>
-        <h2>Select A Course And Instructor</h2>
-        <form>
-          <label>
-            Technology:
-            <select
-              name="technology"
-              id="tech-select"
-              value={formData.technology}
-              onChange={handleChange}
-            >
-              {/* TODO: fetch technologies from backend */}
-              <option value="">--Select A Technology--</option>
-              <option value="net">.NET</option>
-              <option value="java">Java</option>
-            </select>
-          </label>
-          <label>
-            Instructor:
-            <select
-              name="instructor"
-              id="instructor-select"
-              value={formData.instructor}
-              onChange={handleChange}
-            >
-              <option value="">--Select An Instructor--</option>
-              <option value="john-doe">John Doe</option>
-              <option value="jane-doe">Jane Doe</option>
-            </select>
-          </label>
-        </form>
-      </div>
-      <div>
-        <div>
-          <h2>Your Team</h2>
-          <ul>
-            <li>Detail 1</li>
-            <li>Detail 2</li>
-            <li>Detail 3</li>
-          </ul>
+    <div className={`container ${styles.container}`}>
+      <div className="row my-0 my-md-5">
+        <div className="col-sm-12 col-md-8 my-3 my-md-0">
+          <div className={`${styles["info-box"]}`}>
+            <h4>Select A Course And Instructor</h4>
+            <div className={styles["course-info-form-container"]}>
+              <form>
+                <div className="mb-3">
+                  <label className="form-label">Technology:</label>
+                  <select
+                    className="form-select"
+                    name="technology"
+                    id="tech-select"
+                    value={formData.technology}
+                    onChange={handleChange}
+                  >
+                    {/* TODO: fetch technologies from backend */}
+                    <option value="">--Select A Technology--</option>
+                    <option value="net">.NET</option>
+                    <option value="java">Java</option>
+                  </select>
+                </div>
+                <div className="mb-3">
+                  <label className="form-label">Instructor:</label>
+                  <select
+                    className="form-select"
+                    name="instructor"
+                    id="instructor-select"
+                    value={formData.instructor}
+                    onChange={handleChange}
+                  >
+                    <option value="">--Select An Instructor--</option>
+                    <option value="john-doe">John Doe</option>
+                    <option value="jane-doe">Jane Doe</option>
+                  </select>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
-        <div>
-          <button onClick={onSubmit}>COMMIT</button>
+        <div className="col my-3 my-md-0">
+          <div className={`${styles["details-box"]} ${styles["info-box"]}`}>
+            <h4>Additional details</h4>
+          </div>
         </div>
       </div>
-      <div className={styles["details-box"]}>Additional details</div>
-      <div className={styles["email-box"]}>email</div>
+      <div className="row my-0 my-md-5">
+        <div className="col-sm-12 col-md-8 my-3 my-md-0">
+          <div className={styles["info-box"]}>
+            <div>
+              <h4>Your Team</h4>
+              <ul>
+                <li>Detail 1</li>
+                <li>Detail 2</li>
+                <li>Detail 3</li>
+              </ul>
+            </div>
+            <div>
+              <button type="button" className="btn rvtr-btn" onClick={onSubmit}>
+                COMMIT
+              </button>
+            </div>
+          </div>
+        </div>
+        <div className="col my-3 my-md-0">
+          <div className={`${styles["email-box"]} ${styles["info-box"]}`}>
+            <h4>Email</h4>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
