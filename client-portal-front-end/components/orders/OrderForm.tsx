@@ -6,8 +6,7 @@ interface OrderFormData {
   instructor: string;
   associates: number;
 }
-interface TeamData extends OrderFormData {
-}
+interface TeamData extends OrderFormData {}
 /**
  * For now, this component will serve as the UI that a user will interact with to select a course and submit it for purchase on the order/course page.
  */
@@ -18,17 +17,14 @@ const OrderForm: FunctionComponent = () => {
     instructor: "",
     associates: 0,
   });
-  const [teamListData, setTeamListData] = useState<TeamData[]>(
-    []
-  );
-
+  const [teamListData, setTeamListData] = useState<TeamData[]>([]);
 
   /**
    * This event is fired whenever a form field input value updates.  The formData state updates depending on which input field was changed.
    * @param e Change event object which allows the extraction of form data once the event is fired
    */
   const handleChange = (
-    e: React.ChangeEvent<HTMLSelectElement|HTMLInputElement> // for input fields like textarea you can union the HTMLInputElement type
+    e: React.ChangeEvent<HTMLSelectElement | HTMLInputElement> // for input fields like textarea you can union the HTMLInputElement type
   ) => {
     const value = e.target.value; // The value of the option
     const name = e.target.name as keyof OrderFormData; // the name of the input field that was changed
@@ -89,18 +85,22 @@ const OrderForm: FunctionComponent = () => {
                 </div>
                 <div className="mb-3">
                   <label className="form-label">Associates Desired:</label>
-                  <br/>
-                  <input 
+                  <br />
+                  <input
                     type="number"
                     className="form-text"
                     name="associates"
                     id="associates-textbox"
                     value={formData.associates}
                     onChange={handleChange}
-                    />
+                  />
                 </div>
                 <div className="mb-3">
-                  <input type="button" value="Add to Team" onClick={addToTeam}/>
+                  <input
+                    type="button"
+                    value="Add to Team"
+                    onClick={addToTeam}
+                  />
                 </div>
               </form>
             </div>
@@ -118,7 +118,12 @@ const OrderForm: FunctionComponent = () => {
             <div>
               <h4>Your Team</h4>
               <ul id="teamMembers">
-                {teamListData.map((listItem) => <li>Tech: {listItem.technology} Instructor:{listItem.instructor} No. Associates{listItem.associates}</li>)}
+                {teamListData.map((listItem, ind) => (
+                  <li key={ind}>
+                    Tech: {listItem.technology} Instructor:{listItem.instructor}{" "}
+                    No. Associates{listItem.associates}
+                  </li>
+                ))}
               </ul>
             </div>
             <div>
