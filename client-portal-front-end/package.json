@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "bootstrap": "^5.1.0",
     "@stripe/react-stripe-js": "^1.4.1",
     "@stripe/stripe-js": "^1.17.1",
     "next": "11.1.0",

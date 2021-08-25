@@ -1,19 +1,17 @@
 .container {
-  .drop-down-container {
-    // select-input field styling could go here
-  }
-
-  & > div {
-    margin: 10px;
-    padding: 5px;
-    background-color: white;
+  .info-box {
     border-radius: 5px;
-    border: 1px solid blue;
-    box-shadow: 0 0 10px black;
+    border: 1px solid black;
+    padding: 20px;
+    height: 100%;
   }
 
   .form-box {
     background-color: lightblue;
+  }
+
+  .course-info-form-container {
+    margin-top: 30px;
   }
 
   .commit-box {
@@ -21,6 +19,7 @@
   }
 
   .details-box {
+    min-height: 300px;
     background-color: lightblue;
   }
 
