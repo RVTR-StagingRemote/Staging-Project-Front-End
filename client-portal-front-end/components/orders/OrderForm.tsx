@@ -4,7 +4,7 @@ import styles from "../../styles/orders/OrderForm.module.scss";
 interface OrderFormData {
   technology: string;
   instructor: string;
-  associates: string;
+  associates: number;
 }
 
 /**
@@ -15,7 +15,7 @@ const OrderForm: FunctionComponent = () => {
   const [formData, setFormData] = useState<OrderFormData>({
     technology: "",
     instructor: "",
-    associates: "",
+    associates: 0,
   });
 
   /**
@@ -23,7 +23,7 @@ const OrderForm: FunctionComponent = () => {
    * @param e Change event object which allows the extraction of form data once the event is fired
    */
   const handleChange = (
-    e: React.ChangeEvent<HTMLSelectElement> // for input fields like textarea you can union the HTMLInputElement type
+    e: React.ChangeEvent<HTMLSelectElement|HTMLInputElement> // for input fields like textarea you can union the HTMLInputElement type
   ) => {
     const value = e.target.value; // The value of the option
     const name = e.target.name as keyof OrderFormData; // the name of the input field that was changed
@@ -82,7 +82,7 @@ const OrderForm: FunctionComponent = () => {
                   <label className="form-label">Associates Desired:</label>
                   <br/>
                   <input 
-                    type="text"
+                    type="number"
                     className="form-text"
                     name="associates"
                     id="associates-textbox"
