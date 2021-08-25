@@ -76,6 +76,16 @@ const OrderForm: FunctionComponent = () => {
                     <option value="jane-doe">Jane Doe</option>
                   </select>
                 </div>
+                <div className="mb-3">
+                  <label className="form-label">Associates Desired:</label>
+                  <br/>
+                  <input 
+                    type="text"
+                    className="form-text"
+                    name="associates"
+                    id="associates-textbox"
+                    />
+                </div>
               </form>
             </div>
           </div>
