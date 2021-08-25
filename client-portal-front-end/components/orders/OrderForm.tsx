@@ -4,6 +4,7 @@ import styles from "../../styles/orders/OrderForm.module.scss";
 interface OrderFormData {
   technology: string;
   instructor: string;
+  associates: string;
 }
 
 /**
@@ -14,6 +15,7 @@ const OrderForm: FunctionComponent = () => {
   const [formData, setFormData] = useState<OrderFormData>({
     technology: "",
     instructor: "",
+    associates: "",
   });
 
   /**
