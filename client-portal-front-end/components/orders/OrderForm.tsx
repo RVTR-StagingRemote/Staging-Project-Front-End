@@ -4,6 +4,7 @@ import styles from "../../styles/orders/OrderForm.module.scss";
 interface OrderFormData {
   technology: string;
   instructor: string;
+  associates: number;
 }
 
 /**
@@ -14,6 +15,7 @@ const OrderForm: FunctionComponent = () => {
   const [formData, setFormData] = useState<OrderFormData>({
     technology: "",
     instructor: "",
+    associates: 0,
   });
 
   /**
@@ -21,7 +23,7 @@ const OrderForm: FunctionComponent = () => {
    * @param e Change event object which allows the extraction of form data once the event is fired
    */
   const handleChange = (
-    e: React.ChangeEvent<HTMLSelectElement> // for input fields like textarea you can union the HTMLInputElement type
+    e: React.ChangeEvent<HTMLSelectElement|HTMLInputElement> // for input fields like textarea you can union the HTMLInputElement type
   ) => {
     const value = e.target.value; // The value of the option
     const name = e.target.name as keyof OrderFormData; // the name of the input field that was changed
@@ -35,7 +37,7 @@ const OrderForm: FunctionComponent = () => {
   const onSubmit = (e: React.MouseEvent) => {
     // TODO: setup logic to validate and submit data for purchase
     alert(
-      `Course details: \nTech => ${formData.technology} \nInstructor => ${formData.instructor}`
+      `Course details: \nTech => ${formData.technology} \nInstructor => ${formData.instructor} \nAssociates => ${formData.associates}`
     );
   };
 
@@ -75,6 +77,18 @@ const OrderForm: FunctionComponent = () => {
                     <option value="john-doe">John Doe</option>
                     <option value="jane-doe">Jane Doe</option>
                   </select>
+                </div>
+                <div className="mb-3">
+                  <label className="form-label">Associates Desired:</label>
+                  <br/>
+                  <input 
+                    type="number"
+                    className="form-text"
+                    name="associates"
+                    id="associates-textbox"
+                    value={formData.associates}
+                    onChange={handleChange}
+                    />
                 </div>
               </form>
             </div>
