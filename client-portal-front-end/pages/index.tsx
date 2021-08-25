@@ -37,7 +37,7 @@ const Home: NextPage = () => {
           <p>Start browsing our open selection!</p>
           <p className="lead">
             <Link href="/order/course">
-              <a className="btn rvtr-btn btn-lg" role="button">
+              <a className="btn rvtr-btn-secondary btn-lg" role="button">
                 Learn more
               </a>
             </Link>
@@ -63,7 +63,7 @@ const Home: NextPage = () => {
                     Morbi diam turpis, euismod eget orci quis, auctor rhoncus
                     erat.
                   </p>
-                  <a href="#" className="btn rvtr-btn">
+                  <a href="#" className="btn rvtr-btn-primary">
                     Continue &rarr;
                   </a>
                 </div>
@@ -85,7 +85,7 @@ const Home: NextPage = () => {
                     Morbi diam turpis, euismod eget orci quis, auctor rhoncus
                     erat.
                   </p>
-                  <a href="#" className="btn rvtr-btn">
+                  <a href="#" className="btn rvtr-btn-primary">
                     Continue &rarr;
                   </a>
                 </div>
@@ -107,7 +107,7 @@ const Home: NextPage = () => {
                     Morbi diam turpis, euismod eget orci quis, auctor rhoncus
                     erat.
                   </p>
-                  <a href="#" className="btn rvtr-btn">
+                  <a href="#" className="btn rvtr-btn-primary">
                     Continue &rarr;
                   </a>
                 </div>

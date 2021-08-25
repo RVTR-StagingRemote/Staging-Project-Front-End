@@ -4,7 +4,18 @@ html {
   // background-color: #999999;
 }
 
-.rvtr-btn {
+.rvtr-btn-primary {
+  color: white;
+  background-color: $primary;
+  font-weight: bolder;
+}
+
+.rvtr-btn-secondary {
   color: white;
   background-color: $secondary;
+  font-weight: 500;
+
+  &:hover {
+    color: white; // overrides bootstrap changing text color
+  }
 }

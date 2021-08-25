@@ -15,7 +15,15 @@ import React, {
 
 import styles from "../../styles/orders/CheckoutForm.module.scss";
 
-const CheckoutForm = () => {
+interface CheckoutFormProps {
+  /** This will be used to calculate a total sum for stripe on the .NET backend.
+   * TODO: **DO NOT** use this method for production, handling pricing and cart items should be handled on the backend. */
+  numCourses: number;
+}
+
+const CheckoutForm: React.FunctionComponent<CheckoutFormProps> = ({
+  numCourses,
+}) => {
   const [succeeded, setSucceeded] = useState(false);
   const [error, setError] = useState<null | string>(null);
   const [processing, setProcessing] = useState<boolean>(false);
@@ -31,8 +39,11 @@ const CheckoutForm = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      // ! TODO: Do NOT set price in the client in production
-      body: JSON.stringify({ coursesToBuy: [{ id: "course-id" }], price: 2599 }), // * change price here, 1 unit = 1 cent
+      body: JSON.stringify({
+        // TODO: change this approach when the cart system is implemented
+        coursesToBuy: Array(numCourses).fill({ id: "course" }), // temp solution, send this array of n items for the backend to calculate the price
+        price: 2599,
+      }), // * change price here, 1 unit = 1 cent
     })
       .then((res) => {
         return res.json();
@@ -108,73 +119,78 @@ const CheckoutForm = () => {
 
   return (
     <div className={styles.container}>
-      <form
-        id={styles["payment-form"]}
-        // onSubmit will be triggered for a form once it's button
-        // is clicked
-        onSubmit={
-          // we use an asynchrounous function, so make our onSubmit function
-          // property async as well
-          async (e) => {
-            await handleSubmit(e);
-          }
-        }
-      >
-        {/* prebuilt element from Stripe.js. Gives us a field for entering card info
+      <div className={styles["checkout-form-container"]}>
+        <div className={styles["form-group"]}>
+          <form
+            id={styles["payment-form"]}
+            // onSubmit will be triggered for a form once it's button
+            // is clicked
+            onSubmit={
+              // we use an asynchrounous function, so make our onSubmit function
+              // property async as well
+              async (e) => {
+                await handleSubmit(e);
+              }
+            }
+          >
+            {/* prebuilt element from Stripe.js. Gives us a field for entering card info
             as well as utilities for validation and error handling
         */}
-        <CardElement
-          id={styles["card-element"]}
-          options={cardStyle}
-          // onChange is fired everytime a user enters a character
-          // in the cardfield
-          onChange={handleChange}
-        />
-        <button disabled={processing || disabled || succeeded} id="submit">
-          <span id="button-text">
-            {/* If a payment is processing, render a spinner, otherwise prompt the user
+            <CardElement
+              id={styles["card-element"]}
+              options={cardStyle}
+              // onChange is fired everytime a user enters a character
+              // in the cardfield
+              onChange={handleChange}
+            />
+            <button disabled={processing || disabled || succeeded} id="submit">
+              <span id="button-text">
+                {/* If a payment is processing, render a spinner, otherwise prompt the user
                 for pamynent comfirmation. */}
-            {processing ? (
-              <div className={styles.spinner} id={styles["spinner"]}></div>
-            ) : (
-              "Pay now"
+                {processing ? (
+                  <div className={styles.spinner} id={styles["spinner"]}></div>
+                ) : (
+                  "Pay now"
+                )}
+              </span>
+            </button>
+            {/* Show any error that happens if a payment failed to process */}
+            {error && (
+              <div id={styles["card-error"]} className={`mt-2 ${styles["card-error"]}`} role="alert">
+                {error}
+              </div>
             )}
-          </span>
-        </button>
-        {/* Show any error that happens if a payment failed to process */}
-        {error && (
-          <div className={styles["card-error"]} role="alert">
-            {error}
-          </div>
-        )}
-        {/* Show a success message upon completion by toggling off the hidden style*/}
-        <p
-          className={
-            succeeded
-              ? styles["result-message"]
-              : `${styles["result-message"]} ${styles["hidden"]}`
-          }
-        >
-          <p>Thank you for your course purchase 🎉</p>
-          <p>
-            See the result in your
-            <a href={`https://dashboard.stripe.com/test/payments`}>
-              {" "}
-              Stripe dashboard.
-            </a>{" "}
-            Refresh the page to pay again.
-          </p>
-        </p>
-      </form>
-      <div id={styles['card-info']}>
-        <h3>Testing Card Info</h3>
+            {/* Show a success message upon completion by toggling off the hidden style*/}
+            <p
+              className={
+                succeeded
+                  ? `text-white ${styles["result-message"]} mt-2`
+                  : `${styles["result-message"]} ${styles["hidden"]}`
+              }
+            >
+              <p>Success! Thank you for your purchase 🎉</p>
+              <p>
+                See the result in your
+                <a href={`https://dashboard.stripe.com/test/payments`}>
+                  {" "}
+                  Stripe dashboard.
+                </a>{" "}
+                Refresh the page to try again.
+              </p>
+            </p>
+            <h3 className="m-0 mt-3 p-0 text-white">Total: ${numCourses * 20}</h3>
+          </form>
+        </div>
+      </div>
+      <div id={styles["card-info"]}>
+        <h3 className="text-white">Test Cards</h3>
         <ul>
           <li>
             <p>Valid Card</p>
             <p>4242 4242 4242 4242</p>
           </li>
           <li>
-            <p>Declined Card(insufficient funds)</p>
+            <p>Declined Card (insufficient funds)</p>
             <p>4000 0000 0000 9995</p>
           </li>
           <li>

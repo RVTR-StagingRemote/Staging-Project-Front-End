@@ -1,3 +1,5 @@
+@import "../variables.scss";
+
 .container {
   display: flex;
   justify-content: center;
@@ -5,7 +7,7 @@
   flex-direction: column;
   /* Buttons and links */
   button {
-    background: #5469d4;
+    background: $primary;
     font-family: Arial, sans-serif;
     color: #ffffff;
     border-radius: 0 0 4px 4px;
@@ -36,16 +38,6 @@
     box-sizing: border-box;
   }
 
-  form {
-    width: 80vw;
-    background-color: #8793c5;
-    align-self: center;
-    box-shadow: 0px 0px 0px 0.5px rgba(50, 50, 93, 0.1),
-      0px 2px 5px 0px rgba(50, 50, 93, 0.1),
-      0px 1px 1.5px 0px rgba(0, 0, 0, 0.07);
-    border-radius: 7px;
-    padding: 40px;
-  }
   input {
     border-radius: 6px;
     margin-bottom: 6px;
@@ -59,10 +51,26 @@
   }
 
   @media only screen and (max-width: 600px) {
-    form {
-      width: 80vw;
+    .form-group {
+      // width: 80vw;
     }
   }
+}
+
+.checkout-form-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  width: 100%;
+  align-self: center;
+  background-color: $secondary;
+  box-shadow: 0px 0px 0px 0.5px rgba(50, 50, 93, 0.1),
+    0px 2px 5px 0px rgba(50, 50, 93, 0.1), 0px 1px 1.5px 0px rgba(0, 0, 0, 0.07);
+  border-radius: 7px;
+  padding: 40px;
 }
 
 .result-message {
@@ -78,7 +86,7 @@
   display: none;
 }
 #card-error {
-  color: rgb(105, 115, 134);
+  color: rgb(233, 88, 69);
   font-size: 16px;
   line-height: 20px;
   margin-top: 12px;
@@ -157,11 +165,11 @@
 }
 
 #card-info {
-  width: 80vw;
-  background-color: #8793c5;
+  width: 100%;
+  margin: 10px 0;
+  background-color: $secondary;
   border-radius: 7px;
   padding: 40px;
-  margin: 10px;
   align-self: center;
   box-shadow: 0px 0px 0px 0.5px rgba(50, 50, 93, 0.1),
     0px 2px 5px 0px rgba(50, 50, 93, 0.1), 0px 1px 1.5px 0px rgba(0, 0, 0, 0.07);
