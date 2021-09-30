@@ -8,7 +8,9 @@ export function GetCourseList(): Promise<ICourse[]> {
 }
 
 export function GetCourse(id: string): Promise<ICourse> {
-  return fetch(`${baseCourseEndpointURL}/FindCourseById/${id}`).then((resp) => resp.json());
+  return fetch(`${baseCourseEndpointURL}/FindCourseById/${id}`).then((resp) =>
+    resp.json()
+  );
 }
 
 export function CreateCourse(course: ICourse): Promise<any> {
@@ -26,7 +28,7 @@ export function Update(course: ICourse): Promise<any> {
 }
 
 export function DeleteCourse(courseId: string): Promise<any> {
-  return fetch(`${baseCourseEndpointURL}/${courseId}`, { method: "DELETE" }).then((resp) =>
-    resp.json()
-  );
+  return fetch(`${baseCourseEndpointURL}/${courseId}`, {
+    method: "DELETE",
+  }).then((resp) => resp.json());
 }
