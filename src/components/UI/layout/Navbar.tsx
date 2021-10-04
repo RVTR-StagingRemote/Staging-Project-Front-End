@@ -4,7 +4,7 @@ const Navbar: React.FunctionComponent = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
-        <a className="navbar-brand">Revature Courses</a>
+        <a className="navbar-brand">Courses</a>
         <button
           className="navbar-toggler"
           type="button"

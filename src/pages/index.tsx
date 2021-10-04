@@ -32,7 +32,7 @@ const Home: NextPage = () => {
       <div className={`py-5 ${styles.jumbotron}`}>
         <div className="container">
           <h1 className="display-4">Welcome!</h1>
-          <p className="lead">Introducing Revature Courses</p>
+          <p className="lead">Introducing Courses</p>
           <hr className="my-4" />
           <p>Start browsing our open selection!</p>
           <p className="lead">
@@ -63,7 +63,6 @@ const Home: NextPage = () => {
                     Morbi diam turpis, euismod eget orci quis, auctor rhoncus
                     erat.
                   </p>
-                  <a href="#" className="btn rvtr-btn-primary">
                     Continue &rarr;
                   </a>
                 </div>
