@@ -63,53 +63,50 @@ const Home: NextPage = () => {
                     Morbi diam turpis, euismod eget orci quis, auctor rhoncus
                     erat.
                   </p>
-                    Continue &rarr;
-                  </a>
+                  Continue &rarr;
                 </div>
               </div>
             </div>
-            <div className="col-sm-12 col-md-4">
-              <div className="card my-5">
-                <Image
-                  width={300}
-                  height={200}
-                  src="https://via.placeholder.com/300x200?text=Course+2"
-                  className="card-img-top"
-                  alt="placeholder"
-                />
-                <div className="card-body">
-                  <h5 className="card-title">Course title</h5>
-                  <p className="card-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Morbi diam turpis, euismod eget orci quis, auctor rhoncus
-                    erat.
-                  </p>
-                  <a href="#" className="btn rvtr-btn-primary">
-                    Continue &rarr;
-                  </a>
-                </div>
+          </div>
+          <div className="col-sm-12 col-md-4">
+            <div className="card my-5">
+              <Image
+                width={300}
+                height={200}
+                src="https://via.placeholder.com/300x200?text=Course+2"
+                className="card-img-top"
+                alt="placeholder"
+              />
+              <div className="card-body">
+                <h5 className="card-title">Course title</h5>
+                <p className="card-text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+                  diam turpis, euismod eget orci quis, auctor rhoncus erat.
+                </p>
+                <a href="#" className="btn rvtr-btn-primary">
+                  Continue &rarr;
+                </a>
               </div>
             </div>
-            <div className="col-sm-12 col-md-4">
-              <div className="card my-5">
-                <Image
-                  width={300}
-                  height={200}
-                  src="https://via.placeholder.com/300x200?text=Course+3"
-                  className="card-img-top"
-                  alt="placeholder"
-                />
-                <div className="card-body">
-                  <h5 className="card-title">Course title</h5>
-                  <p className="card-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Morbi diam turpis, euismod eget orci quis, auctor rhoncus
-                    erat.
-                  </p>
-                  <a href="#" className="btn rvtr-btn-primary">
-                    Continue &rarr;
-                  </a>
-                </div>
+          </div>
+          <div className="col-sm-12 col-md-4">
+            <div className="card my-5">
+              <Image
+                width={300}
+                height={200}
+                src="https://via.placeholder.com/300x200?text=Course+3"
+                className="card-img-top"
+                alt="placeholder"
+              />
+              <div className="card-body">
+                <h5 className="card-title">Course title</h5>
+                <p className="card-text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+                  diam turpis, euismod eget orci quis, auctor rhoncus erat.
+                </p>
+                <a href="#" className="btn rvtr-btn-primary">
+                  Continue &rarr;
+                </a>
               </div>
             </div>
           </div>
