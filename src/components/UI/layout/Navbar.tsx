@@ -1,10 +1,11 @@
 import Link from "next/link";
+import styles from "../../../styles/layout/Navbar.module.scss";
 
 const Navbar: React.FunctionComponent = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <div className="container-fluid">
-        <a className="navbar-brand">Courses</a>
+    <nav className="navbar navbar-expand-lg navbar-dark">
+      <div className={`container-fluid ${styles.title}`}>
+        <a className="navbar-brand">Employee Hiring Tool</a>
         <button
           className="navbar-toggler"
           type="button"
@@ -28,6 +29,11 @@ const Navbar: React.FunctionComponent = () => {
             <li className="nav-item">
               <Link href="/order/course">
                 <a className="nav-link">Courses</a>
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link href="/aboutus/AboutUs">
+                <a className="nav-link">About Us</a>
               </Link>
             </li>
           </ul>
