@@ -1,6 +1,17 @@
 # Client Portal Front End
 
 <br />
+<p align="center">
+<img alt="Sonar Cloud" src="https://sonarcloud.io/images/project_badges/sonarcloud-orange.svg" />
+</p>
+<p align="center">
+<img alt="Quality Gate" src="https://sonarcloud.io/api/project_badges/measure?project=RVTR-StagingRemote_Staging-Project-Front-End&metric=alert_status" />
+<img alt="Security" src="" />
+<br/>
+<img alt="Bugs" src="" />
+<img alt="Line of Code" src="" />
+<img alt="Vulnerabilities" src="" />
+</p>
 
 ## Languages and Tools used
 
@@ -21,7 +32,7 @@
 
 ## Description
 
-The client portal project is a react website designed around Revature llc clients needs. from this site a Revature client should be able to:
+The Employee hiring tool is designed to be used to aid business owners in quickly meeting their hiring needs.
 
 1. Create an account
 2. Login/ logout
