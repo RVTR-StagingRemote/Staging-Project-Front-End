@@ -35,13 +35,23 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+- First, run the development server located [here](https://github.com/RVTR-StagingRemote/Staging-Project-Back-End.git)
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+- Then, clone this repository to your local machine (or server).
+  ```bash
+    $ git clone https://github.com/RVTR-StagingRemote/Staging-Project-Front-End.git path/to/dir
+    $ cd path/to/dir
+  ```
+- Install necessary packages.
+  ```bash
+    npm install
+  ```
+- Run code for testing.
+  ```bash
+    npm run dev
+    # or
+    yarn dev
+  ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
