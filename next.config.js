@@ -7,6 +7,6 @@ module.exports = {
     includePaths: [path.join(__dirname, "styles")],
   },
   images: {
-    domains: ["via.placeholder.com"],
+    domains: ["via.placeholder.com", "images.unsplash.com"],
   },
 };
