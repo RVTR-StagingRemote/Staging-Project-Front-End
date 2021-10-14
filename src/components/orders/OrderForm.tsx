@@ -69,11 +69,11 @@ const OrderForm: FunctionComponent = () => {
       <div className="row">
         <div className="col-sm-12 col-md-8 mt-5">
           <div className={`${styles["info-box"]}`}>
-            <h4>Select Your Team Requirements</h4>
+            <h4>Select Your Employee Requirements</h4>
             <div className={styles["course-info-form-container"]}>
               <form>
                 <div className="mb-3">
-                  <label className="form-label">Technology:</label>
+                  <label className="form-label">Career Category:</label>
                   <select
                     className="form-select"
                     name="technology"
@@ -82,13 +82,13 @@ const OrderForm: FunctionComponent = () => {
                     onChange={handleChange}
                   >
                     {/* TODO: fetch technologies from backend */}
-                    <option value="">--Select A Technology--</option>
+                    <option value="">--Select A Category--</option>
                     <option value="net">.NET</option>
                     <option value="java">Java</option>
                   </select>
                 </div>
                 <div className="mb-3">
-                  <label className="form-label">Instructor:</label>
+                  <label className="form-label">Education Requirement:</label>
                   <select
                     className="form-select"
                     name="instructor"
@@ -96,13 +96,17 @@ const OrderForm: FunctionComponent = () => {
                     value={formData.instructor}
                     onChange={handleChange}
                   >
-                    <option value="">--Select An Instructor--</option>
+                    <option value="">
+                      --Select An Education Requirement--
+                    </option>
                     <option value="john-doe">John Doe</option>
                     <option value="jane-doe">Jane Doe</option>
                   </select>
                 </div>
                 <div className="mb-3">
-                  <label className="form-label">Associates Desired:</label>
+                  <label className="form-label">
+                    Number Employees Desired:
+                  </label>
                   <br />
                   <input
                     type="number"
@@ -162,7 +166,7 @@ const OrderForm: FunctionComponent = () => {
                 className="btn rvtr-btn-secondary"
                 onClick={onSubmit}
               >
-                COMMIT
+                Order
               </button>
             </div>
           </div>
