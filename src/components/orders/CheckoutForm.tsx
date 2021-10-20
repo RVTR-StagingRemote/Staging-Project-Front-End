@@ -53,7 +53,7 @@ const CheckoutForm: React.FunctionComponent<CheckoutFormProps> = ({
         // used for tracking a succesful, failed or incomplete PaymentIntent
         setClientSecret(data.clientSecret);
       });
-  }, []);
+  });
 
   /**
    * For now, read user input for the card field to give a live update
@@ -156,7 +156,11 @@ const CheckoutForm: React.FunctionComponent<CheckoutFormProps> = ({
             </button>
             {/* Show any error that happens if a payment failed to process */}
             {error && (
-              <div id={styles["card-error"]} className={`mt-2 ${styles["card-error"]}`} role="alert">
+              <div
+                id={styles["card-error"]}
+                className={`mt-2 ${styles["card-error"]}`}
+                role="alert"
+              >
                 {error}
               </div>
             )}
@@ -178,7 +182,9 @@ const CheckoutForm: React.FunctionComponent<CheckoutFormProps> = ({
                 Refresh the page to try again.
               </p>
             </p>
-            <h3 className="m-0 mt-3 p-0 text-white">Total: ${numCourses * 20}</h3>
+            <h3 className="m-0 mt-3 p-0 text-white">
+              Total: ${numCourses * 20}
+            </h3>
           </form>
         </div>
       </div>
