@@ -28,7 +28,7 @@ const Navbar: React.FunctionComponent = () => {
             </li>
             <li className="nav-item">
               <Link href="/order/course">
-                <a className="nav-link">Courses</a>
+                <a className="nav-link">Order Now!</a>
               </Link>
             </li>
             <li className="nav-item">
