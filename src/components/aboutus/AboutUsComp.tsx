@@ -7,6 +7,12 @@ import Image from "next/image";
 import React, { FunctionComponent, useState } from "react";
 import styles from "../../styles/aboutUs/AboutUs.module.scss";
 
+/**
+ * AboutUsComp - used to display the about us page components
+ * @param props
+ * @returns {JSX.Element}
+ * @author Matthew Terry
+ */
 const AboutUsComp: FunctionComponent = () => {
   return (
     <div className={styles.container}>

@@ -6,6 +6,7 @@ import styles from "../styles/pages/Home.module.scss";
 
 import { COURSE_ARR } from "../models/temp/sampleData"; // temp for testing while there's no back end connection
 
+// mapping an array to create individual course cards
 const arr_list = COURSE_ARR.map((a, ind) => (
   <div key={ind}>
     <div>
@@ -18,6 +19,10 @@ const arr_list = COURSE_ARR.map((a, ind) => (
   </div>
 ));
 
+/**
+ *
+ * @returns
+ */
 const Home: NextPage = () => {
   return (
     <div className={styles.container}>
