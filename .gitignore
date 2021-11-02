@@ -387,3 +387,4 @@ MigrationBackup/
 
 .vscode/
 package-lock.json
+.idea
