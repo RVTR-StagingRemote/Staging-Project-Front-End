@@ -19,7 +19,7 @@ const EmployeeInformation = (props: Props) => {
             <Form.Control type="text" placeholder="Last name" />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formPhoneNumber">
-            <Form.Label>Phone Number</Form.Label>
+            <Form.Label>Phone Number (###) ###-####</Form.Label>
             <Form.Control type="tel" pattern="\([0-9]{3}\) [0-9]{3}-[0-9]{4}" placeholder="(###) ###-####" />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formStreetAddress">
@@ -31,7 +31,7 @@ const EmployeeInformation = (props: Props) => {
             <Form.Control type="text" placeholder="city" />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formState">
-            <Form.Label>State</Form.Label>
+            <Form.Label>State (2)</Form.Label>
             <Form.Control type="text" pattern="[A-Z]{2}" placeholder="VA" />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formZipcode">

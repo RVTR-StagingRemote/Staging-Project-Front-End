@@ -36,6 +36,13 @@ const Navbar: React.FunctionComponent = () => {
                 <a className="nav-link">About Us</a>
               </Link>
             </li>
+            /* Just an item to test my component. */
+            <li className="nav-item">
+              <Link href="/jeffrey/EmployeeInformation">
+                <a className="nav-link">Employee Information</a>
+              </Link>
+            </li>
+            /* End */
           </ul>
           <form className="d-flex">
             <input
