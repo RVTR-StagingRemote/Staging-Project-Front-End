@@ -7,6 +7,13 @@ interface Props {
     description: string;
 }
 
+// TODO:
+// This component will need correct URIs for the buttons. I'm expecting to get that from props.
+// There is an issue with the image sizing/layout of the card. I will need to look into the image size + css to try to remedy this
+// This component will need a URI for the image. I'm expecting to get that (or the image component itself) from props
+// Should the buttons have the right arrow?
+// I'm thinking of creating a .scss for the styles here and using that instead of bootstrap classes to style this component.
+
 const Occupations = (props: Props) => {
     return (
         <div className="card my-2 ps-0 pe-4">
