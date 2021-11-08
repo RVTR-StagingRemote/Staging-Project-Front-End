@@ -1,18 +1,20 @@
 import React from "react";
 
-interface Props {
+{/* I didn't think the implementation was super important, as the structure and understanding React was more important, but I'd love to add a image to the props here if we figure that out. */ }
+interface Props { 
     companyName: string,
     companyDescription: string,
 
 }
-{/* need an image prop for below as it says its yelling at me */ }
+{/* need an image prop for below as it says its yelling at me, src and source doesn't work and Idk what to use in props */ }
 {/* This takes a list of props that is defined above and returns a card displaying company details*/ }
+{ /*Bootstrap source for the HMTL, see Components -> Card on the side https://getbootstrap.com/docs/5.0/getting-started/introduction/ */ }
 const CompanyDetails = (props: Props) => {
     return <div className="card my-2 ps-0 pe-4">
         <div className="row">
-            <div className="col-md-4">  {/* mess around with this */}
+            <div className="col-md-4">  {/* Change potentially how this appears to make it look more like what they want*/}
                 <image width={400} height={300} src={require("https://images.unsplash.com/photo-1495314736024-fa5e4b37b979?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1173&q=80")} className="card-img-top" />  {/* TODO: find image, figure out where to put image in this frontend and link to image in this line */}
-            </div>
+            </div> {/* Big note, this image stuff is just a placeholder, I do not know what form we will save the image in for this component */ }
             <div className="col-md-6">
                 <div className="card-body">
                     <h5 className="card-title">{props.companyName}</h5> {/* Company Name within the card text that's included in Props */}
