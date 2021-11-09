@@ -6,4 +6,4 @@ const CompanyDetails = (props: Props) => {
   return <div></div>;
 };
 
-export default CompanyDetails,
+export default CompanyDetails;
