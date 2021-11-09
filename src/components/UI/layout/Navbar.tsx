@@ -36,6 +36,11 @@ const Navbar: React.FunctionComponent = () => {
                 <a className="nav-link">About Us</a>
               </Link>
             </li>
+            <li className="nav-item">{/* This is only to view applicant profile component temporarily */}
+              <Link href="/profile/ApplicantProfile">
+                <a className="nav-link">Applicant-Profile</a>
+              </Link>
+            </li>
           </ul>
           <Link href="/signup/SignUp">
             <a className="btn btn-sm rounded" role="button"> Sign Up </a>
