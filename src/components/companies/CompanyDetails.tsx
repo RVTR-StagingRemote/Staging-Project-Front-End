@@ -1,6 +1,8 @@
 import React from "react";
 
-{/* I didn't think the implementation was super important, as the structure and understanding React was more important, but I'd love to add a image to the props here if we figure that out. */ }
+
+
+{/* Need to do: Figure out the src error below. */ }
 interface Props { 
     companyName: string,
     companyDescription: string,
@@ -12,8 +14,10 @@ interface Props {
 const CompanyDetails = (props: Props) => {
     return <div className="card my-2 ps-0 pe-4">
         <div className="row">
-            <div className="col-md-4">  {/* Change potentially how this appears to make it look more like what they want*/}
-                <image width={400} height={300} src={require("https://images.unsplash.com/photo-1495314736024-fa5e4b37b979?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1173&q=80")} className="card-img-top" />  {/* TODO: find image, figure out where to put image in this frontend and link to image in this line */}
+            <div className="col-md-4">  {/* Potentially tweak this. */}
+                <image width={400} height={300} src={require("https://images.unsplash.com/photo-1495314736024-fa5e4b37b979?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1173&q=80")}
+                    className="img-fluid rounded-start"
+                    alt="https://via.placeholder.com/300x200?text=Course+3" />  
             </div> {/* Big note, this image stuff is just a placeholder, I do not know what form we will save the image in for this component */ }
             <div className="col-md-6">
                 <div className="card-body">
