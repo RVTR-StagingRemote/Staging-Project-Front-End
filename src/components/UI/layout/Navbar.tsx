@@ -43,6 +43,11 @@ const Navbar: React.FunctionComponent = () => {
               </Link>
             </li>
             /* End */
+            <li className="nav-item">{/* This is only to view applicant profile component temporarily */}
+              <Link href="/profile/ApplicantProfile">
+                <a className="nav-link">Applicant-Profile</a>
+              </Link>
+            </li>
           </ul>
           <form className="d-flex">
             <input
