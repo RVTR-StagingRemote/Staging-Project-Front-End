@@ -49,7 +49,10 @@ const Navbar: React.FunctionComponent = () => {
               </Link>
             </li>
           </ul>
-          <form className="d-flex">
+          <Link href="/signup/SignUp">
+            <a className="btn btn-sm rounded" role="button"> Sign Up </a>
+          </Link>
+          {/* <form className="d-flex">
             <input
               className="form-control me-2"
               type="search"
@@ -59,7 +62,7 @@ const Navbar: React.FunctionComponent = () => {
             <button className="btn btn-outline-success" type="submit">
               Search
             </button>
-          </form>
+          </form> */}
         </div>
       </div>
     </nav>
