@@ -7,6 +7,7 @@ import loginStyles from "../../styles/login/Login.module.scss";
 
 const LoginPage: NextPage = () => {
   return (
+
     <div className="order-form-container">
       <Head>
         <title>Client Portal</title>
@@ -30,48 +31,53 @@ const LoginPage: NextPage = () => {
             </Link>
           </p>
         </div>
+      </div>
 
-    </div>
-    <div className={loginStyles.Container}>
-
-            <div className={loginStyles.Item}>
+      <div className="container my-5 border shadow">
+          <div className="p-4">
+            <div className="h5 fw-bold d-flex justify-content-center">
+              User Login
             </div>
-            <div className={ loginStyles.Item }>
-              <div className={ loginStyles.outline}>
-                <div className={loginStyles.LoginTitle}>
-                  <h5> <b>User Login</b> </h5>
-                </div>
-                <div className={loginStyles.LoginContainer}>
-                <div><b>Username:</b> </div>
-                <div><input type="textbox" className={loginStyles.TextboxStyle}></input></div>
-                </div>
-                <div className={loginStyles.LoginContainer}>
-                  <div><b>Password:</b> </div>
-                  <div><input type="password" className={loginStyles.TextboxStyle}></input></div>
-                </div>
-                <div className={loginStyles.buttonContainer}>
-                  <button  type="button" className={ [loginStyles.btn, "btn"].join(" ") } >Log in</button>
-                </div>
-                <div className={loginStyles.buttonContainer}>
-                  <button  type="button" className={ [loginStyles.btn, "btn-primary"].join(" ") } >Forget Username ?</button>
-                </div>
-                <div className={ [loginStyles.buttonContainer, loginStyles.bottomPadding].join(" ") }>
-                  <button  type="button" className={ [loginStyles.btn, "btn-primary" ].join(" ") } >Forget Password?</button>
-                </div>
+            
+            <div className="row gap-3 py-2">
+              <div className="offset-2 col-1 fw-bold">
+                Username:
               </div>
-              <div className={ loginStyles.outline}>
-                <div className={loginStyles.LoginTitle}>
-                  <h5> <b>Don't have an Account?</b> </h5>
-                </div>
-               <div className={ [loginStyles.buttonContainer, loginStyles.bottomPadding].join(" ") }>
-                  <button  type="button" className={ [loginStyles.btn, "btn-info" ].join(" ") } >Forget Password?</button>
-                </div>
+              <div className="col-6 d-flex flex-column">
+                <input type="textbox" className=""/>
+              </div>
+            </div>
+            <div className="row gap-3 py-2">
+              <div className="offset-2 col-1 fw-bold">
+                Password:
+              </div>
+              <div className="col-6 d-flex flex-column">
+                <input type="password" className=""/>
               </div>
             </div>
 
-        </div>
-    </div>
+            <div className="row py-2">
+              <div className="offset-4 col-4 d-flex flex-column">
+                <button type="button" className="btn-primary rounded p-1">Log In</button>
+              </div>
+            </div>
 
+            <div className="row py-2">
+              <div className="col-12 col-md-4 d-flex justify-content-center my-2">
+                <a>New User?</a>
+              </div>
+              <div className="col-12 col-md-4 d-flex justify-content-center my-2">
+                <a>Forgot Username</a>
+              </div>
+              <div className="col-12 col-md-4 d-flex justify-content-center my-2">
+                <a>Forgot Password</a>
+              </div>
+            </div>
+          </div>
+      </div>
+
+    </div>
+    
   );
 };
 
