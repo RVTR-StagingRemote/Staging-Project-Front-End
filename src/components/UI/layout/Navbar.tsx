@@ -36,30 +36,9 @@ const Navbar: React.FunctionComponent = () => {
                 <a className="nav-link">About Us</a>
               </Link>
             </li>
-            /* Just an item to test my component. */
-            <li className="nav-item">
-              <Link href="/jeffrey/EmployeeInformation">
-                <a className="nav-link">Employee Information</a>
-              </Link>
-            </li>
-            /* End */
-            <li className="nav-item">{/* This is only to view applicant profile component temporarily */}
-              <Link href="/profile/ApplicantProfile">
-                <a className="nav-link">Applicant-Profile</a>
-              </Link>
-            </li>
           </ul>
-          <form className="d-flex">
-            <input
-              className="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button className="btn btn-outline-success" type="submit">
-              Search
-            </button>
-          </form>
+
+          <a href="/login/login" className="btn rvtr-btn-primary">Login</a>
         </div>
       </div>
     </nav>

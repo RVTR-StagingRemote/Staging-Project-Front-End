@@ -2,6 +2,8 @@ import React from "react";
 
 interface Props {}
 
-export const AccountInformation = (props: Props) => {
+const SignUp = (props: Props) => {
   return <div></div>;
 };
+
+export default SignUp;
