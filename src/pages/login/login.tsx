@@ -1,11 +1,41 @@
+import { useState } from "react"
 import { NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "../../styles/pages/Home.module.scss";
 import loginStyles from "../../styles/login/Login.module.scss";
+import axios from "axios";
+
 
 const LoginPage: NextPage = () => {
+
+  const [username, setUsername] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+
+  const onUsernameChange = (e:React.ChangeEvent<HTMLInputElement>) => 
+  {
+    setUsername(e.target.value);
+  }
+
+  const onPasswordChange = (e:React.ChangeEvent<HTMLInputElement>) =>
+  {
+    setPassword(e.target.value);
+  }
+
+  const onLogin = (e:any) =>
+  {
+      axios.post("http://10.0.0.137:3000/clientportal/api/login", {
+          email: username,
+          password: password
+      })
+      .then((response) => {
+          console.log(response);
+      }, (error) => {
+
+      })
+  }
+
   return (
 
     <div className="order-form-container">
@@ -44,7 +74,7 @@ const LoginPage: NextPage = () => {
                 Username:
               </div>
               <div className="col-6 d-flex flex-column">
-                <input type="textbox" className=""/>
+                <input type="textbox" className="" onChange={onUsernameChange} value={username}/>
               </div>
             </div>
             <div className="row gap-3 py-2">
@@ -52,13 +82,13 @@ const LoginPage: NextPage = () => {
                 Password:
               </div>
               <div className="col-6 d-flex flex-column">
-                <input type="password" className=""/>
+                <input type="password" className="" onChange={onPasswordChange} value={password} />
               </div>
             </div>
 
             <div className="row py-2">
               <div className="offset-4 col-4 d-flex flex-column">
-                <button type="button" className="btn-primary rounded p-1">Log In</button>
+                <button type="button" className="btn-primary rounded p-1" onClick={onLogin}>Log In</button>
               </div>
             </div>
 
