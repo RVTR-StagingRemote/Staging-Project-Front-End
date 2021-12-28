@@ -6,12 +6,16 @@ import Image from "next/image";
 import styles from "../../styles/pages/Home.module.scss";
 import loginStyles from "../../styles/login/Login.module.scss";
 import axios from "axios";
-
+import { useRouter } from "next/router";
 
 const LoginPage: NextPage = () => {
 
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const [error, setError] = useState<boolean>(false);
+  const [errorMessage, setErrorMessage] = useState<string>("");
+  const router  = useRouter();
+
 
   const onUsernameChange = (e:React.ChangeEvent<HTMLInputElement>) => 
   {
@@ -23,17 +27,34 @@ const LoginPage: NextPage = () => {
     setPassword(e.target.value);
   }
 
-  const onLogin = (e:any) =>
+  const onError = () => {
+    if (error == false)
+    {
+      setError(true);
+
+      let errorTimer = setInterval(() => {
+        setError(false);
+        clearInterval(errorTimer);
+      },5000);
+    }
+  }
+
+  const onLogin = () =>
   {
-      axios.post("http://10.0.0.137:3000/clientportal/api/login", {
+      
+      axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
+      axios.post("http://localhost:8000/clientportal/api/login", {
           email: username,
           password: password
       })
       .then((response) => {
           console.log(response);
       }, (error) => {
-
+          setErrorMessage("There's a server Error. Please report this and try again later! ");
+          onError();
       })
+      
+     //router.push("/")
   }
 
   return (
@@ -70,6 +91,12 @@ const LoginPage: NextPage = () => {
             </div>
             
             <div className="row gap-3 py-2">
+              <div>
+               <span className={[ "alert","alert-danger", error ? loginStyles.alertBox:loginStyles.noAlertBox].join(" ")} role="alert" >
+                { errorMessage } 
+              </span>
+              </div>
+
               <div className="offset-2 col-1 fw-bold">
                 Username:
               </div>

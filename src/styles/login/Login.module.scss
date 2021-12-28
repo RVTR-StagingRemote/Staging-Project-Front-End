@@ -55,3 +55,19 @@
 {
     padding-bottom: 20px;
 }
+
+.alertBox 
+{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom:15px;
+    width: 60%;
+}
+.noAlertBox
+{
+    visibility: hidden;
+    display: none;
+}
