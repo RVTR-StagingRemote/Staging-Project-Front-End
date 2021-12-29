@@ -14,6 +14,7 @@ const LoginPage: NextPage = () => {
   const [password, setPassword] = useState<string>("");
   const [error, setError] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState<string>("");
+  const [disableButton, setDisableButton] = useState(false);
   const router  = useRouter();
 
 
@@ -41,7 +42,7 @@ const LoginPage: NextPage = () => {
 
   const onLogin = () =>
   {
-      
+      setDisableButton(true);    
       axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
       axios.post("http://localhost:8000/clientportal/api/login", {
           email: username,
@@ -49,7 +50,10 @@ const LoginPage: NextPage = () => {
       })
       .then((response) => {
           console.log(response);
+          setDisableButton(false);    
       }, (error) => {
+
+          setDisableButton(false);    
           setErrorMessage("There's a server Error. Please report this and try again later! ");
           onError();
       })
@@ -115,13 +119,13 @@ const LoginPage: NextPage = () => {
 
             <div className="row py-2">
               <div className="offset-4 col-4 d-flex flex-column">
-                <button type="button" className="btn-primary rounded p-1" onClick={onLogin}>Log In</button>
+                <button type="button" className="btn-primary rounded p-1" onClick={onLogin} disabled={disableButton ? true:false} >Log In</button>
               </div>
             </div>
 
             <div className="row py-2">
               <div className="col-12 col-md-4 d-flex justify-content-center my-2">
-                <a>New User?</a>
+                <a href="/register/register">New User?</a>
               </div>
               <div className="col-12 col-md-4 d-flex justify-content-center my-2">
                 <a>Forgot Username</a>
