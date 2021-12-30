@@ -10,6 +10,13 @@ import { useRouter } from "next/router";
 
 const Register: NextPage = () => {
 
+  const router = useRouter();
+
+  const onCompanyButtonClick = () =>
+  {
+      router.push("/register/company")   
+  }
+
   return (
 
     <div className="order-form-container">
@@ -44,7 +51,7 @@ const Register: NextPage = () => {
                 </div>
                 <div className={registerStyles.div2}>
                     <div className={registerStyles.buttons}>
-                      <button type="button" className={["btn", "rvtr-btn-seconday", "btn-lg", "p-1","buttonW", registerStyles.companyButton, registerStyles.pad].join(" ")} >Company</button>
+                      <button type="button" className={["btn", "rvtr-btn-seconday", "btn-lg", "p-1","buttonW", registerStyles.companyButton, registerStyles.pad].join(" ")} onClick={onCompanyButtonClick} >Company</button>
                       <button type="button" className={["btn", "rvtr-btn-seconday", "btn-lg", "p-1", "buttonW", registerStyles.userButton].join(" ")} >Applicant</button>
                     </div>
                 </div>
