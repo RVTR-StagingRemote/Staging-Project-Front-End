@@ -1,4 +1,5 @@
 import react from "react"
+import React, { useState } from "react"
 import {NextPage } from "next"
 import Head from "next/head"
 import Link from "next/link"
@@ -6,6 +7,43 @@ import styles from "../../styles/pages/Home.module.scss";
 import applicantStyles from "../../styles/register/Applicant.module.scss"
 
 const Applicant: NextPage = () => {
+    
+    const [ firstname, setFirstname] = useState("");
+    const [ lastname, setLastname ] = useState("");
+    const [ education, setEducation] = useState("");
+    const [ educationField, setEducationField] = useState("");
+    const [ email, setEmail] = useState("");
+    const [ password, setPassword] = useState("");
+
+    const firstnameOnChange = (e:React.ChangeEvent<HTMLInputElement>) =>
+    {
+        setFirstname(e.target.value);
+    }
+
+    const lastnameOnChange = (e:React.ChangeEvent<HTMLInputElement>) =>
+    {
+        setLastname(e.target.value);
+    }
+
+    const educationOnChange = (e:React.ChangeEvent<HTMLInputElement>) =>
+    {
+        setEducation(e.target.value);
+    }
+    const educationFieldOnChange = (e:React.ChangeEvent<HTMLInputElement>) =>
+    {
+        setEducationField(e.target.value);
+    }
+
+    const emailOnChange = (e:React.ChangeEvent<HTMLInputElement>) =>
+    {
+        setEmail(e.target.value);
+    }
+
+    const passwordOnChange = (e:React.ChangeEvent<HTMLInputElement>) =>
+    {
+        setPassword(e.target.value);
+    }
+
     return (
     <div className="">
       <Head>
@@ -45,7 +83,7 @@ const Applicant: NextPage = () => {
                                 First Name:
                             </div>
                             <div className={applicantStyles.fieldLayout}>
-                                <input type="text"></input>
+                                <input type="text" className={applicantStyles.textInput} value={firstname} onChange={firstnameOnChange}></input>
                             </div>
                         </div>
                         <div className={applicantStyles.fieldCol} >
@@ -53,7 +91,7 @@ const Applicant: NextPage = () => {
                                 Education Field:
                             </div>
                             <div className={applicantStyles.fieldLayout}>
-                                <input type="text"></input>
+                                <input type="text" className={applicantStyles.textInput} value={education} onChange={educationOnChange}></input>
                             </div>
                        </div>
                     </div>
@@ -63,7 +101,7 @@ const Applicant: NextPage = () => {
                                 Last Name:
                             </div>
                             <div className={applicantStyles.fieldLayout}>
-                                <input type="text"></input>
+                                <input type="text"  className={applicantStyles.textInput} value={lastname} onChange={lastnameOnChange}></input>
                             </div>
                         </div>
                         <div className={applicantStyles.fieldCol} >
@@ -71,7 +109,7 @@ const Applicant: NextPage = () => {
                                 Education Level:
                             </div>
                             <div className={applicantStyles.fieldLayout}>
-                                <input type="text"></input>
+                                <input type="text" className={applicantStyles.textInput} value={educationField} onChange={educationFieldOnChange}></input>
                             </div>
                        </div>
                     </div>
@@ -81,7 +119,7 @@ const Applicant: NextPage = () => {
                                 E-Mail:
                             </div>
                             <div className={applicantStyles.fieldLayout}>
-                                <input type="text"></input>
+                                <input type="text" className={applicantStyles.textInput} value={email} onChange={emailOnChange}></input>
                             </div>
                         </div>
                         <div className={applicantStyles.fieldCol} >
@@ -99,7 +137,7 @@ const Applicant: NextPage = () => {
                                 Password:
                             </div>
                             <div className={applicantStyles.fieldLayout}>
-                                <input type="text"></input>
+                                <input type="password" className={applicantStyles.textInput}  value={password} onChange={passwordOnChange}/>
                             </div>
                         </div>
                         <div className={applicantStyles.fieldCol} >
