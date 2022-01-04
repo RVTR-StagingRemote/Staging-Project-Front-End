@@ -14,7 +14,11 @@ const Register: NextPage = () => {
 
   const onCompanyButtonClick = () =>
   {
-      router.push("/register/company")   
+      router.push("/register/company");  
+  }
+  const onApplicantClick = () =>
+  {
+    router.push("/register/applicant");
   }
 
   return (
@@ -52,7 +56,7 @@ const Register: NextPage = () => {
                 <div className={registerStyles.div2}>
                     <div className={registerStyles.buttons}>
                       <button type="button" className={["btn", "rvtr-btn-seconday", "btn-lg", "p-1","buttonW", registerStyles.companyButton, registerStyles.pad].join(" ")} onClick={onCompanyButtonClick} >Company</button>
-                      <button type="button" className={["btn", "rvtr-btn-seconday", "btn-lg", "p-1", "buttonW", registerStyles.userButton].join(" ")} >Applicant</button>
+                      <button type="button" className={["btn", "rvtr-btn-seconday", "btn-lg", "p-1", "buttonW", registerStyles.userButton].join(" ")}  onClick={onApplicantClick}>Applicant</button>
                     </div>
                 </div>
                 <div className={registerStyles.div3}>
